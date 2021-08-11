@@ -40,7 +40,7 @@ const RideOptionsCard = () => {
                     onPress={() => navigation.navigate('NavigateCard')} style={tw`absolute top-3 left-5 p-3 rounded-full `} >
                     <Icon name="chevron-left" type="fontawesome" />
                 </TouchableOpacity>
-                <Text style={tw`text-center py-5 text-xl`}>Select a Ride - {travelTimeInformation?.distance.text}</Text>
+                <Text style={tw`text-center py-5 text-xl`}>Select a Ride - {travelTimeInformation?.distance?.text}</Text>
             </View>
 
             <FlatList
@@ -54,14 +54,14 @@ const RideOptionsCard = () => {
                         />
                         <View style={tw`-ml-6`} >
                             <Text style={tw`text-xl font-semibold`}>{title}</Text>
-                            <Text>{travelTimeInformation?.duration.text} Travel Time </Text>
+                            <Text>{travelTimeInformation?.duration?.text} Travel Time </Text>
                         </View>
                         <Text style={tw`text-xl`}>
                             {new Intl.NumberFormat('en-gb', {
                                 style: 'currency',
                                 currency: 'GBP'
                             }).format(
-                                (travelTimeInformation?.duration.value * SURGE_CHARGE_RATE * multiplier / 100)
+                                (travelTimeInformation?.duration?.value * SURGE_CHARGE_RATE * multiplier / 100)
                             )}
                             
 
