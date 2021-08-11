@@ -6,6 +6,7 @@ import { GOOGLE_MAPS_APIKEY } from '@env' //configured in babel.config.js
 import { GooglePlacesAutocomplete } from 'react-native-google-places-autocomplete';
 import { useDispatch } from 'react-redux';
 import { setOrigin, setDestination } from '../slices/navSlice'
+import NavFavourites from '../components/NavFavourites';
 
 
 const HomeScreen = () => {
@@ -39,6 +40,7 @@ const HomeScreen = () => {
                     nearbyPlacesAPI="GooglePlacesSearch"
                     debounce={400} />
                 <NavOptions />
+                <NavFavourites/>
             </View>
         </SafeAreaView>
     )
