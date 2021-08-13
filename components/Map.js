@@ -29,7 +29,6 @@ const Map = () => {
            fetch(`https://maps.googleapis.com/maps/api/distancematrix/json?units=imperial&origins=${origin.description}&destinations=${destination.description}&key=${GOOGLE_MAPS_APIKEY}`)
            .then(res =>res.json())
            .then(data => {
-               console.log(data)
                dispatch(setTravelTimeInformation(data.rows[0].elements[0]))
            })
         }
@@ -55,6 +54,7 @@ const Map = () => {
                     apikey={GOOGLE_MAPS_APIKEY}
                     strokeWidth={3}
                     strokeColor="black"
+                    lineDashPattern={[0]}
 
                 />
             )}

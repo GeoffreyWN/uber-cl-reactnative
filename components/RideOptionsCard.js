@@ -5,6 +5,8 @@ import { Icon } from 'react-native-elements';
 import { useSelector } from 'react-redux';
 import tw from 'tailwind-react-native-classnames';
 import { selectTravelTimeInformation } from '../slices/navSlice';
+import "intl";
+import "intl/locale-data/jsonp/en";
 
 const data = [
     {
@@ -63,7 +65,6 @@ const RideOptionsCard = () => {
                             }).format(
                                 (travelTimeInformation?.duration?.value * SURGE_CHARGE_RATE * multiplier / 100)
                             )}
-                            
 
                         </Text>
                     </TouchableOpacity>
